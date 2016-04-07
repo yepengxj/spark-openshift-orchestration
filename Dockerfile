@@ -1,1 +1,1 @@
-FROM gcr.io/google_containers/spark:1.5.2_v1
+FROM gcr.io/google_containers/zeppelin:v0.5.6_v1
