@@ -1,0 +1,23 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: sb-instanceid-spark-master
+spec:
+  replicas: 1
+  selector:
+    servicebroker: sb-instanceid-spark-master
+  template:
+    metadata:
+      labels:
+        servicebroker: sb-instanceid-spark-master
+    spec:
+      containers:
+        - name: sb-instanceid-spark-master
+          image: index.alauda.cn/asiainfoldp/docker-spark
+          command: ["/start-master"]
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m

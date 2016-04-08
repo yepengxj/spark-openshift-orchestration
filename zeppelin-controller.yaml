@@ -1,0 +1,21 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: sb-instanceid-zeppelin
+spec:
+  replicas: 1
+  selector:
+    servicebroker: sb-instanceid-zeppelin
+  template:
+    metadata:
+      labels:
+        servicebroker: sb-instanceid-zeppelin
+    spec:
+      containers:
+        - name: sb-instanceid-zeppelin
+          image: index.alauda.cn/asiainfoldp/docker-zeppelin
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m

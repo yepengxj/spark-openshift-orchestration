@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sb-instanceid-sm
+spec:
+  ports:
+    - port: 7077
+      targetPort: 7077
+  selector:
+    servicebroker: sb-instanceid-spark-master
