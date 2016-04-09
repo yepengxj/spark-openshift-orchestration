@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: sb-instanceid-spark-worker
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     servicebroker: sb-instanceid-spark-worker
   template:
@@ -16,7 +16,7 @@ spec:
           env: 
             - name: SPARK_MASTER
               value: sb-instanceid-sm
-          image: index.alauda.cn/asiainfoldp/docker-spark
+          image: index.alauda.cn/asiainfoldp/spark
           command: ["/start-worker"]
           ports:
             - containerPort: 8081

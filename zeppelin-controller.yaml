@@ -13,7 +13,10 @@ spec:
     spec:
       containers:
         - name: sb-instanceid-zeppelin
-          image: index.alauda.cn/asiainfoldp/docker-zeppelin
+          env: 
+            - name: SPARK_MASTER
+              value: sb-instanceid-sm
+          image: index.alauda.cn/asiainfoldp/zeppelin
           ports:
             - containerPort: 8080
           resources:

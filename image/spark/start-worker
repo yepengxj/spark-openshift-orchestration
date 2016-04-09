@@ -24,5 +24,6 @@ if ! getent hosts ${SPARK_MASTER}; then
   exit 0
 fi
 
+echo "master is ${SPARK_MASTER}."
 # Run spark-class directly so that when it exits (or crashes), the pod restarts.
 /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://${SPARK_MASTER}:7077 --webui-port 8081

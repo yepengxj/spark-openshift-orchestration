@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: sb-instanceid-spark-master
-          image: index.alauda.cn/asiainfoldp/docker-spark
+          image: index.alauda.cn/asiainfoldp/spark
           command: ["/start-master"]
           ports:
             - containerPort: 7077
