@@ -16,6 +16,8 @@ spec:
           env: 
             - name: SPARK_MASTER
               value: sb-instanceid-sm
+            - name: SPARK_SECRET
+              value: test1234
           image: index.alauda.cn/asiainfoldp/spark
           command: ["/start-master"]
           ports:
