@@ -15,7 +15,7 @@ spec:
         - name: sb-instanceid-spark-worker
           env: 
             - name: SPARK_MASTER
-              value: sb-instanceid-sm
+              value: spark-master
           image: index.alauda.cn/asiainfoldp/spark
           command: ["/start-worker"]
           ports:
