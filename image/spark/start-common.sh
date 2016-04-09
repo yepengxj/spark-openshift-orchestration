@@ -20,6 +20,14 @@ if [[ -n "${PROJECT_ID}" ]]; then
   sed -i "s/NOT_RUNNING_INSIDE_GCE/${PROJECT_ID}/" /opt/spark/conf/core-site.xml
 fi
 
+if [[ -n "${SPARK_MASTER}" ]]; then
+  sed -i "s/SPARK_MASTER/${SPARK_MASTER}/" /opt/spark/conf/spark-defaults.conf
+fi
+
+if [[ -n "${SPARK_SECRET}" ]]; then
+  sed -i "s/SPARK_SECRET/${SPARK_SECRET}/" /opt/spark/conf/spark-defaults.conf
+fi
+
 # We don't want any of the incoming service variables, we'd rather use
 # DNS. But this one interferes directly with Spark.
 unset SPARK_MASTER_PORT
