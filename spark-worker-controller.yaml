@@ -14,8 +14,8 @@ spec:
       containers:
         - name: sb-instanceid-spark-worker
           env: 
-            - name: SPARK_MASTER_SERVICE_HOST
-              value: 172.30.76.11
+            - name: SPARK_MASTER
+              value: sb-instanceid-sm
           image: index.alauda.cn/asiainfoldp/docker-spark
           command: ["/start-worker"]
           ports:
