@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: sb-instanceid-spark-worker
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     servicebroker: sb-instanceid-spark-worker
   template:
@@ -15,7 +15,7 @@ spec:
         - name: sb-instanceid-spark-worker
           env: 
             - name: SPARK_MASTER
-              value: spark-master
+              value: sb-instanceid-sm
           image: index.alauda.cn/asiainfoldp/spark
           command: ["/start-worker"]
           ports:

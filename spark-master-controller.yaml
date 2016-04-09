@@ -13,6 +13,9 @@ spec:
     spec:
       containers:
         - name: sb-instanceid-spark-master
+          env: 
+            - name: SPARK_MASTER
+              value: sb-instanceid-sm
           image: index.alauda.cn/asiainfoldp/spark
           command: ["/start-master"]
           ports:
