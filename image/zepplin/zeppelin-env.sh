@@ -15,7 +15,7 @@
 # limitations under the License.
 
 export MASTER="spark://${SPARK_MASTER}:7077"
-export SPARK_HOME=/usr/share/spark
+export SPARK_HOME=/opt/spark
 export ZEPPELIN_NOTEBOOK_DIR="${ZEPPELIN_HOME}/notebook"
 export ZEPPELIN_MEM=-Xmx1024m
 export ZEPPELIN_PORT=8080

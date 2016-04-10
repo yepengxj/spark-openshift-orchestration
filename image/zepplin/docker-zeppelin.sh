@@ -20,11 +20,11 @@ export ZEPPELIN_CONF_DIR="${ZEPPELIN_HOME}/conf"
 
 
 if [[ -n "${SPARK_MASTER}" ]]; then
-  sed -i "s/SPARK_MASTER/${SPARK_MASTER}/" /usr/share/spark/conf/spark-defaults.conf
+  sed -i "s/SPARK_MASTER/${SPARK_MASTER}/" /opt/spark/conf/spark-defaults.conf
 fi
 
 if [[ -n "${SPARK_SECRET}" ]]; then
-  sed -i "s/SPARK_SECRET/${SPARK_SECRET}/" /usr/share/spark/conf/spark-defaults.conf
+  sed -i "s/SPARK_SECRET/${SPARK_SECRET}/" /opt/spark/conf/spark-defaults.conf
 fi
 
 echo "=== Launching Zeppelin under Docker ==="

@@ -15,7 +15,7 @@
 # This image relies on the zeppelin-build image to get the zeppelin
 # binaries built, and the Makefile to put it in this directory.
 
-FROM index.alauda.cn/asiainfoldp/spark-base
+FROM index.alauda.cn/asiainfoldp/spark
 
 ENV ZEPPELIN_VER  0.5.6-incubating
 
@@ -29,6 +29,5 @@ RUN mkdir -p /opt && \
 ADD zeppelin-log4j.properties /opt/zeppelin/conf/log4j.properties
 ADD zeppelin-env.sh /opt/zeppelin/conf/zeppelin-env.sh
 ADD docker-zeppelin.sh /opt/zeppelin/bin/docker-zeppelin.sh
-ADD spark-defaults.conf /usr/share/spark/conf/spark-defaults.conf
 EXPOSE 8080
 ENTRYPOINT ["/opt/zeppelin/bin/docker-zeppelin.sh"]
