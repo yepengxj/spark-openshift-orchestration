@@ -17,5 +17,15 @@
 export ZEPPELIN_HOME=/opt/zeppelin
 export ZEPPELIN_CONF_DIR="${ZEPPELIN_HOME}/conf"
 
+
+
+if [[ -n "${SPARK_MASTER}" ]]; then
+  sed -i "s/SPARK_MASTER/${SPARK_MASTER}/" /usr/share/spark/conf/spark-defaults.conf
+fi
+
+if [[ -n "${SPARK_SECRET}" ]]; then
+  sed -i "s/SPARK_SECRET/${SPARK_SECRET}/" /usr/share/spark/conf/spark-defaults.conf
+fi
+
 echo "=== Launching Zeppelin under Docker ==="
 /opt/zeppelin/bin/zeppelin.sh "${ZEPPELIN_CONF_DIR}"
