@@ -21,7 +21,8 @@ ENV ZEPPELIN_VER  0.5.6-incubating
 
 RUN mkdir -p /opt && \
     cd /opt && \
-    curl http://www.us.apache.org/dist/incubator/zeppelin/${ZEPPELIN_VER}/zeppelin-${ZEPPELIN_VER}-bin-all.tgz | \
+#    curl http://www.us.apache.org/dist/incubator/zeppelin/${ZEPPELIN_VER}/zeppelin-${ZEPPELIN_VER}-bin-all.tgz | \
+     curl http://mirrors.cnnic.cn/apache/incubator/zeppelin/${ZEPPELIN_VER}/zeppelin-${ZEPPELIN_VER}g-bin-all.tgz | \
         tar -zx && \
     ln -s zeppelin-${ZEPPELIN_VER}-bin-all zeppelin && \
     echo Zeppelin ${ZEPPELIN_VER} installed in /opt
