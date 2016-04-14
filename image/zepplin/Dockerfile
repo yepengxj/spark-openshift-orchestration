@@ -15,7 +15,7 @@
 # This image relies on the zeppelin-build image to get the zeppelin
 # binaries built, and the Makefile to put it in this directory.
 
-FROM  spark
+FROM  registry.dataos.io/spark
 
 ENV ZEPPELIN_VER  0.5.6-incubating
 
