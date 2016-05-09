@@ -20,15 +20,17 @@ export ZEPPELIN_CONF_DIR="${ZEPPELIN_HOME}/conf"
 eval SPARK_MASTER=\$BSI_${SPARKBSI}_HOST
 eval SPARK_SECRET=\$BSI_${SPARKBSI}_PASSWORD
 
-echo $SPARK_MASTER
-echo $SPARK_SECRET
+echo spark_master:$SPARK_MASTER
+echo spark_secret:$SPARK_SECRET
 
 export $SPARK_MASTER
 export $SPARK_SECRET
 
 if [[ -n "${SPARK_MASTER}" ]]; then
   sed -i "s/SPARK_MASTER/${SPARK_MASTER}/" /opt/spark/conf/spark-defaults.conf
+  sed -i "s/\${SPARK_MASTER}/${BSI_SPARK_HOST}/" /opt/zeppelin/conf/zeppelin-env.sh
 fi
+
 
 if [[ -n "${SPARK_SECRET}" ]]; then
   sed -i "s/SPARK_SECRET/${SPARK_SECRET}/" /opt/spark/conf/spark-defaults.conf
