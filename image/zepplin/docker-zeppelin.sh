@@ -23,6 +23,9 @@ eval SPARK_SECRET=\$BSI_${SPARKBSI}_PASSWORD
 echo $SPARK_MASTER
 echo $SPARK_SECRET
 
+export $SPARK_MASTER
+export $SPARK_SECRET
+
 if [[ -n "${SPARK_MASTER}" ]]; then
   sed -i "s/SPARK_MASTER/${SPARK_MASTER}/" /opt/spark/conf/spark-defaults.conf
 fi
