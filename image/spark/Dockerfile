@@ -1,5 +1,8 @@
 FROM java:8
 
+RUN sed -i "s/http:\/\/httpredir.debian.org/http:\/\/mirrors.aliyun.com/g" /etc/apt/sources.list && \
+    sed -i "s/http:\/\/security.debian.org/http:\/\/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list
+
 ENV hadoop_ver 2.6.1
 ENV spark_ver 1.5.2
 
